@@ -1,0 +1,1733 @@
+
+      }<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌈 Trigger-Free Facts - Learn About Animals Kindly</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Fredoka', 'Comic Neue', cursive, sans-serif;
+            background: linear-gradient(135deg, #87CEEB 0%, #98D8C8 50%, #F4E4C1 100%);
+            color: #3d2817;
+            line-height: 1.7;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(90deg, rgba(139, 90, 43, 0.03) 0px, transparent 2px, transparent 40px),
+                repeating-linear-gradient(0deg, rgba(139, 90, 43, 0.03) 0px, transparent 2px, transparent 40px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Floating Animal Decorations */
+        .floating-animals {
+            position: fixed;
+            font-size: 2rem;
+            opacity: 0.15;
+            pointer-events: none;
+            animation: float 20s infinite ease-in-out;
+            z-index: 1;
+        }
+
+        .floating-animals:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+        .floating-animals:nth-child(2) { top: 60%; right: 8%; animation-delay: 5s; }
+        .floating-animals:nth-child(3) { bottom: 15%; left: 15%; animation-delay: 10s; }
+        .floating-animals:nth-child(4) { top: 40%; right: 20%; animation-delay: 15s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Top Banner */
+        .top-banner {
+            background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+            color: #FFF8DC;
+            text-align: center;
+            padding: 0.8rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 101;
+            border-bottom: 3px solid #DEB887;
+        }
+
+        .top-banner span {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #F5DEB3 0%, #FAEBD7 100%);
+            padding: 1.2rem 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-radius: 0 0 30px 30px;
+            border: 4px solid #D2691E;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #8B4513;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 2px solid transparent;
+        }
+
+        nav a:hover {
+            background: linear-gradient(135deg, #8FBC8F 0%, #90EE90 100%);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(143, 188, 143, 0.4);
+            border-color: #228B22;
+        }
+
+        /* Progress Tracker */
+        .progress-tracker {
+            background: linear-gradient(135deg, #FFF8DC 0%, #FAEBD7 100%);
+            padding: 1.5rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 4px solid #D2691E;
+        }
+
+        .progress-tracker h3 {
+            color: #8B4513;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .progress-bar {
+            background: #E8D5C4;
+            height: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            border: 2px solid #CD853F;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #8FBC8F 0%, #90EE90 100%);
+            height: 100%;
+            width: 0%;
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .achievement-badges {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            opacity: 0.3;
+            transition: all 0.3s;
+            border: 2px solid #DAA520;
+        }
+
+        .badge.earned {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+            animation: fadeIn 1s;
+            background: linear-gradient(135deg, #FFF8DC 0%, #FAEBD7 100%);
+            border-radius: 30px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            margin: 2rem 0;
+            border: 5px solid #D2691E;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '🌾';
+            position: absolute;
+            font-size: 4rem;
+            opacity: 0.1;
+            top: 20px;
+            left: 20px;
+        }
+        
+        .hero::after {
+            content: '🌾';
+            position: absolute;
+            font-size: 4rem;
+            opacity: 0.1;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #8FBC8F 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            color: #8B4513;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .paw-prints {
+            font-size: 2rem;
+            letter-spacing: 1rem;
+            opacity: 0.6;
+        }
+
+        .hub-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .hub-button {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.4s;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            color: #FFF8DC;
+            border: 6px solid #D2691E;
+            position: relative;
+        }
+
+        .hub-button::before {
+            content: '🌾';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 40px;
+            height: 40px;
+            background: #FFD700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border: 3px solid #DAA520;
+        }
+
+        .hub-button:hover {
+            transform: scale(1.15) rotate(-5deg);
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .hub-button span {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        .hub-button p {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Sections */
+        .section {
+            display: none;
+            animation: slideIn 0.5s;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #FFF8DC 0%, #FAEBD7 100%);
+            border-radius: 30px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            border: 5px solid #D2691E;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '🌿';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3rem;
+            opacity: 0.1;
+        }
+
+        .card h2 {
+            color: #8B4513;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .card h3 {
+            color: #6B8E23;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .card p {
+            margin-bottom: 1rem;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #3d2817;
+        }
+
+        /* Fact Box */
+        .fact-box {
+            background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+            border-left: 6px solid #6B8E23;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .fact-box:hover {
+            transform: translateX(10px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .did-you-know {
+            background: linear-gradient(135deg, #FFF9E6 0%, #FFE9B3 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            border: 4px dashed #DAA520;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .did-you-know::before {
+            content: "💡 Did You Know?";
+            display: block;
+            font-weight: 700;
+            color: #B8860B;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Interactive Animal Cards */
+        .animal-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .animal-option {
+            background: linear-gradient(135deg, #FFF8DC 0%, #F5DEB3 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 4px solid #CD853F;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .animal-option:hover {
+            border-color: #6B8E23;
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .animal-option.selected {
+            border-color: #8B4513;
+            background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+        }
+
+        .animal-option .emoji {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Story Section */
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .story-card {
+            background: linear-gradient(135deg, #FFF8DC 0%, #F5DEB3 100%);
+            border-radius: 25px;
+            padding: 2.5rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            cursor: pointer;
+            transition: all 0.4s;
+            border: 5px solid #D2691E;
+        }
+
+        .story-card:hover {
+            transform: translateY(-10px) rotate(2deg);
+            border-color: #6B8E23;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .story-card h3 {
+            color: #8B4513;
+            margin-bottom: 1rem;
+            font-size: 1.7rem;
+        }
+
+        .story-card .emoji {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            animation: wiggle 1s ease-in-out infinite;
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+
+        .story-content {
+            display: none;
+            background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            margin-top: 1.5rem;
+            animation: fadeIn 0.5s;
+            border: 3px solid #6B8E23;
+        }
+
+        /* Quiz Section */
+        .quiz-container {
+            max-width: 900px;
+            margin: 2rem auto;
+        }
+
+        .quiz-score {
+            background: linear-gradient(135deg, #ff6b9d 0%, #ffa726 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .question {
+            background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 100%);
+            padding: 2.5rem;
+            border-radius: 25px;
+            margin: 2rem 0;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            border: 4px solid #81c784;
+        }
+
+        .question h3 {
+            color: #5e35b1;
+            margin-bottom: 2rem;
+            font-size: 1.6rem;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .option {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 3px solid #e0e0e0;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.15rem;
+            font-weight: 500;
+        }
+
+        .option:hover {
+            background: #e1f5fe;
+            border-color: #2196f3;
+            transform: translateX(10px);
+        }
+
+        .option.correct {
+            background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%);
+            border-color: #4caf50;
+            animation: celebrate 0.5s;
+        }
+
+        .option.incorrect {
+            background: linear-gradient(135deg, #ffccbc 0%, #ffab91 100%);
+            border-color: #ff5722;
+        }
+
+        @keyframes celebrate {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .feedback {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            border-radius: 15px;
+            display: none;
+            font-weight: 600;
+        }
+
+        .feedback.show {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        .feedback.correct {
+            background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%);
+            color: #1b5e20;
+        }
+
+        .feedback.incorrect {
+            background: linear-gradient(135deg, #ffe0b2 0%, #ffcc80 100%);
+            color: #e65100;
+        }
+
+        /* Wellbeing Tools */
+        .wellbeing-tools {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .tool-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f3e5f5 100%);
+            border-radius: 25px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            transition: all 0.3s;
+            border: 4px solid #ce93d8;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+        }
+
+        .tool-card h3 {
+            color: #7b1fa2;
+            margin-bottom: 1.5rem;
+            font-size: 1.6rem;
+        }
+
+        .breathing-circle {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4fc3f7 0%, #2196f3 100%);
+            margin: 2rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 5px solid white;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        .breathing-circle:hover {
+            transform: scale(1.1);
+        }
+
+        .breathing-circle.breathing {
+            animation: breathe 8s infinite;
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); background: linear-gradient(135deg, #4fc3f7 0%, #2196f3 100%); }
+            50% { transform: scale(1.4); background: linear-gradient(135deg, #81c784 0%, #66bb6a 100%); }
+        }
+
+        .affirmation-box {
+            background: linear-gradient(135deg, #fff9c4 0%, #ffecb3 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 1.5rem 0;
+            font-size: 1.4rem;
+            text-align: center;
+            font-weight: 600;
+            color: #ff6f00;
+            border: 3px solid #ffa726;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Mood Check */
+        .mood-emojis {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 3rem 0;
+        }
+
+        .mood-emoji {
+            font-size: 5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            padding: 1.5rem;
+            border-radius: 25px;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 3px solid #e0e0e0;
+        }
+
+        .mood-emoji:hover {
+            transform: scale(1.3) rotate(10deg);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            border-color: #66bb6a;
+        }
+
+        .mood-response {
+            display: none;
+            background: linear-gradient(135deg, #ffffff 0%, #e1f5fe 100%);
+            padding: 3rem;
+            border-radius: 25px;
+            margin-top: 2rem;
+            text-align: center;
+            animation: fadeIn 0.5s;
+            border: 4px solid #4fc3f7;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .mood-response.show {
+            display: block;
+        }
+
+        .mood-response h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Daily Tip Box */
+        .daily-tip {
+            background: linear-gradient(135deg, #c5cae9 0%, #9fa8da 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 25px;
+            margin: 2rem 0;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            border: 4px solid #7986cb;
+        }
+
+        .daily-tip h3 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+        }
+
+        .daily-tip p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+        }
+
+        /* Contact Form */
+        .form-group {
+            margin: 2rem 0;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            color: #5e35b1;
+            font-size: 1.2rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1.2rem;
+            border: 3px solid #e0e0e0;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-family: 'Fredoka', sans-serif;
+            transition: all 0.3s;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #66bb6a;
+            box-shadow: 0 0 0 4px rgba(102, 187, 106, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Buttons */
+        .btn {
+            background: linear-gradient(135deg, #66bb6a 0%, #4caf50 100%);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(102, 187, 106, 0.4);
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(102, 187, 106, 0.5);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #5e35b1 0%, #4527a0 100%);
+            box-shadow: 0 4px 15px rgba(94, 53, 177, 0.4);
+        }
+
+        .btn-secondary:hover {
+            box-shadow: 0 8px 25px rgba(94, 53, 177, 0.5);
+        }
+
+        .back-home {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        /* Fun Facts Carousel */
+        .fun-fact-carousel {
+            background: linear-gradient(135deg, #4fc3f7 0%, #2196f3 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 25px;
+            text-align: center;
+            margin: 2rem 0;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border: 4px solid white;
+        }
+
+        .fun-fact-carousel p {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        /* Animal of the Day */
+        .animal-of-day {
+            background: linear-gradient(135deg, #fff9c4 0%, #ffecb3 100%);
+            padding: 2.5rem;
+            border-radius: 25px;
+            margin: 2rem 0;
+            text-align: center;
+            border: 4px solid #ffa726;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+
+        .animal-of-day .big-emoji {
+            font-size: 6rem;
+            margin: 1rem 0;
+            animation: bounce 2s infinite;
+        }
+
+        .animal-of-day h3 {
+            color: #ff6f00;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hub-button {
+                width: 180px;
+                height: 180px;
+            }
+
+            nav ul {
+                gap: 0.8rem;
+            }
+
+            nav a {
+                font-size: 0.95rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .mood-emoji {
+                font-size: 4rem;
+            }
+        }
+
+        /* Print Styles for Resources */
+        @media print {
+            .floating-animals, nav, .btn { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Animals -->
+    <div class="floating-animals">🐷</div>
+    <div class="floating-animals">🐄</div>
+    <div class="floating-animals">🐔</div>
+    <div class="floating-animals">🐑</div>
+
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <span>🌟 Welcome to a safe space for learning! 🌟</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home" onclick="showSection('home')">🏠 Home</a></li>
+            <li><a href="#facts" onclick="showSection('facts')">📚 Facts</a></li>
+            <li><a href="#stories" onclick="showSection('stories')">📖 Stories</a></li>
+            <li><a href="#quiz" onclick="showSection('quiz')">🎯 Quiz</a></li>
+            <li><a href="#wellbeing" onclick="showSection('wellbeing')">💚 Calm Corner</a></li>
+            <li><a href="#mood" onclick="showSection('mood')">😊 Mood Check</a></li>
+            <li><a href="#about" onclick="showSection('about')">ℹ️ About</a></li>
+            <li><a href="#contact" onclick="showSection('contact')">✉️ Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <!-- Progress Tracker -->
+            <div class="progress-tracker">
+                <h3>🏆 Your Learning Journey</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressBar">0%</div>
+                </div>
+                <div class="achievement-badges">
+                    <div class="badge" id="badge1">🎓 Knowledge Seeker</div>
+                    <div class="badge" id="badge2">❤️ Compassion Champion</div>
+                    <div class="badge" id="badge3">🌟 Story Explorer</div>
+                    <div class="badge" id="badge4">🧠 Quiz Master</div>
+                </div>
+            </div>
+
+            <!-- Hero -->
+            <div class="hero">
+                <h1>🌈 Trigger-Free Facts 🌈</h1>
+                <div class="paw-prints">🐾 🐾 🐾</div>
+                <p>Learning about animals in a kind and gentle way</p>
+                <p style="font-size: 1.2rem;">Have questions, suggestions, or want to share your thoughts? We'd love to hear from you!</p>
+                <p style="color: #ff6f00; font-weight: 700; font-size: 1.2rem; background: #fff9c4; padding: 1rem; border-radius: 15px; margin: 1.5rem 0;">💡 Important: Please ask a parent or teacher before sending a message!</p>
+
+                <form id="contactForm" onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <label for="name">Your Name (or nickname):</label>
+                        <input type="text" id="name" name="name" required placeholder="What should we call you?">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">Your Age:</label>
+                        <input type="number" id="age" name="age" min="5" max="18" placeholder="How old are you?">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Parent/Teacher Email:</label>
+                        <input type="email" id="email" name="email" required placeholder="parent@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="messageType">What would you like to do?</label>
+                        <select id="messageType" style="width: 100%; padding: 1.2rem; border: 3px solid #e0e0e0; border-radius: 15px; font-size: 1.1rem; font-family: 'Fredoka', sans-serif;">
+                            <option>Ask a question</option>
+                            <option>Share feedback</option>
+                            <option>Tell us about what you learned</option>
+                            <option>Suggest an improvement</option>
+                            <option>Just say hello!</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message:</label>
+                        <textarea id="message" name="message" rows="6" required placeholder="Tell us what's on your mind! We read every message with care. 💚"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">Send Message 📨</button>
+                </form>
+
+                <div id="formSuccess" style="display: none; background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%); padding: 3rem; border-radius: 25px; margin-top: 2rem; text-align: center; border: 4px solid #66bb6a;">
+                    <h3 style="color: #1b5e20; font-size: 2rem;">✅ Thank You So Much!</h3>
+                    <p style="color: #1b5e20; font-size: 1.2rem; margin-top: 1rem;">Your message has been received! We'll get back to you as soon as we can. Keep being awesome and caring about animals! 🌟</p>
+                </div>
+
+                <div style="margin-top: 3rem; padding: 2.5rem; background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); border-radius: 25px; border: 4px solid #ba68c8;">
+                    <h3 style="color: #7b1fa2;">🌐 Other Ways to Connect & Share:</h3>
+                    <p style="font-size: 1.15rem; margin: 1rem 0;"><strong>📧 Email:</strong> info@triggerfreefacts.org</p>
+                    <p style="font-size: 1.15rem; margin: 1rem 0;"><strong>🌍 Share this site</strong> with your friends, classmates, and teachers!</p>
+                    <p style="font-size: 1.15rem; margin: 1rem 0;"><strong>🎨 Create art</strong> inspired by what you learned and share it with us!</p>
+                    <p style="font-size: 1.15rem; margin: 1rem 0;"><strong>💭 Start conversations</strong> with your family about being kind to animals</p>
+                    <p style="font-size: 1.15rem; margin: 1rem 0;"><strong>⭐ Tell us your ideas</strong> for new features or content you'd like to see!</p>
+                </div>
+
+                <div class="back-home">
+                    <button onclick="showSection('home')" class="btn">🏠 Back to Home</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Progress Tracking
+        let visitedSections = {
+            facts: false,
+            stories: false,
+            quiz: false,
+            wellbeing: false
+        };
+        let quizScore = 0;
+
+        function trackProgress(section) {
+            if (!visitedSections[section]) {
+                visitedSections[section] = true;
+                updateProgress();
+            }
+        }
+
+        function updateProgress() {
+            const total = Object.keys(visitedSections).length;
+            const completed = Object.values(visitedSections).filter(v => v).length;
+            const percentage = Math.round((completed / total) * 100);
+            
+            const progressBar = document.getElementById('progressBar');
+            progressBar.style.width = percentage + '%';
+            progressBar.textContent = percentage + '%';
+
+            // Unlock badges
+            if (visitedSections.facts) {
+                document.getElementById('badge1').classList.add('earned');
+            }
+            if (visitedSections.wellbeing) {
+                document.getElementById('badge2').classList.add('earned');
+            }
+            if (visitedSections.stories) {
+                document.getElementById('badge3').classList.add('earned');
+            }
+            if (quizScore >= 4) {
+                document.getElementById('badge4').classList.add('earned');
+            }
+        }
+
+        // Navigation
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        // Animal of the Day Rotation
+        const animals = [
+            {emoji: '🐷', name: 'Penny the Pig!'},
+            {emoji: '🐄', name: 'Clara the Cow!'},
+            {emoji: '🐔', name: 'Henry the Hen!'},
+            {emoji: '🐑', name: 'Stella the Sheep!'}
+        ];
+        let currentAnimal = 0;
+
+        setInterval(() => {
+            currentAnimal = (currentAnimal + 1) % animals.length;
+            document.getElementById('animalOfDay').textContent = animals[currentAnimal].emoji;
+            document.getElementById('animalName').textContent = animals[currentAnimal].name;
+        }, 5000);
+
+        // Daily Tips
+        const dailyTips = [
+            "Every small choice you make can help animals! Try eating one extra vegetable today. 🥕",
+            "Thank someone today who's kind to animals - like a farmer, vet, or pet owner! 💙",
+            "Draw a picture of your favorite farm animal and show it to your family! 🎨",
+            "Learn one new fact about animals today and share it with a friend! 📚",
+            "Practice being gentle with ALL living things - even bugs! 🐛",
+            "Try a new plant-based food this week - you might discover a new favorite! 🌱",
+            "Write a thank-you note to animals for all they give us. 💌",
+            "Watch the clouds and imagine what farm animals might see when they look up! ☁️",
+            "Be proud of yourself for learning about animals - you're amazing! ⭐",
+            "Share what you learned here with someone who might not know! 💬"
+        ];
+
+        function newDailyTip() {
+            const tip = dailyTips[Math.floor(Math.random() * dailyTips.length)];
+            document.getElementById('dailyTip').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('dailyTip').textContent = tip;
+                document.getElementById('dailyTip').style.opacity = '1';
+            }, 300);
+        }
+
+        // Fun Facts Carousel
+        const carouselFacts = [
+            "🌟 Quick Fact: Pigs are smarter than dogs and can solve puzzles!",
+            "🌟 Quick Fact: Cows can recognize over 100 other cows by their faces!",
+            "🌟 Quick Fact: Chickens can do basic math and understand cause and effect!",
+            "🌟 Quick Fact: Sheep have amazing memories and never forget a face!",
+            "🌟 Quick Fact: Goats have different accents based on where they live!",
+            "🌟 Quick Fact: Turkeys can recognize human faces from up to 20 feet away!",
+            "🌟 Quick Fact: Ducks can surf on ocean waves just for fun!"
+        ];
+        let currentFact = 0;
+
+        function rotateFact() {
+            currentFact = (currentFact + 1) % carouselFacts.length;
+            const factElement = document.getElementById('carouselFact');
+            factElement.style.opacity = '0';
+            setTimeout(() => {
+                factElement.textContent = carouselFacts[currentFact];
+                factElement.style.opacity = '1';
+            }, 300);
+        }
+
+        // Animal Info Selector
+        function showAnimalInfo(animal) {
+            // Remove selected class from all
+            document.querySelectorAll('.animal-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            // Add selected to clicked
+            event.target.closest('.animal-option').classList.add('selected');
+            
+            // Hide all info sections
+            document.querySelectorAll('.animal-info').forEach(info => {
+                info.style.display = 'none';
+            });
+            
+            // Show selected
+            document.getElementById(animal + 'Info').style.display = 'block';
+        }
+
+        // Story Toggle
+        function toggleStory(storyId) {
+            const story = document.getElementById(storyId);
+            if (story.style.display === 'block') {
+                story.style.display = 'none';
+            } else {
+                story.style.display = 'block';
+            }
+        }
+
+        // Quiz
+        function checkAnswer(option, isCorrect, questionNum) {
+            const options = option.parentElement.querySelectorAll('.option');
+            options.forEach(opt => {
+                opt.style.pointerEvents = 'none';
+            });
+
+            const feedback = document.getElementById('feedback' + questionNum);
+            const response = feedback.querySelector('.response');
+
+            if (isCorrect) {
+                option.classList.add('correct');
+                feedback.classList.add('correct');
+                feedback.classList.remove('incorrect');
+                response.textContent = '🌟 Amazing! You got it right! You\'re learning so much about animals!';
+                quizScore++;
+                document.getElementById('quizScore').textContent = quizScore;
+                updateProgress();
+            } else {
+                option.classList.add('incorrect');
+                feedback.classList.add('incorrect');
+                feedback.classList.remove('correct');
+                response.textContent = '💙 Not quite, but that\'s okay! Learning is all about trying. Keep going - you\'re doing great!';
+            }
+
+            feedback.classList.add('show');
+        }
+
+        function resetQuiz() {
+            quizScore = 0;
+            document.getElementById('quizScore').textContent = '0';
+            
+            document.querySelectorAll('.option').forEach(opt => {
+                opt.classList.remove('correct', 'incorrect');
+                opt.style.pointerEvents = 'auto';
+            });
+            
+            document.querySelectorAll('.feedback').forEach(fb => {
+                fb.classList.remove('show', 'correct', 'incorrect');
+            });
+            
+            window.scrollTo(0, 0);
+        }
+
+        // Breathing Exercise
+        function startBreathing(circle) {
+            if (circle.classList.contains('breathing')) {
+                circle.classList.remove('breathing');
+                circle.textContent = 'Click to Start';
+            } else {
+                circle.classList.add('breathing');
+                circle.textContent = 'Breathe In...';
+                
+                let count = 0;
+                const breathingInterval = setInterval(() => {
+                    count++;
+                    if (count % 2 === 0) {
+                        circle.textContent = 'Breathe In...';
+                    } else {
+                        circle.textContent = 'Breathe Out...';
+                    }
+                    
+                    if (count >= 8) {
+                        circle.textContent = '✨ Great Job! ✨';
+                        clearInterval(breathingInterval);
+                        setTimeout(() => {
+                            if (circle.classList.contains('breathing')) {
+                                circle.textContent = 'Breathe In...';
+                            }
+                        }, 2000);
+                    }
+                }, 4000);
+            }
+        }
+
+        // Affirmations
+        const affirmations = [
+            'I am kind to all living things',
+            'My compassion makes the world better',
+            'I am brave for learning new things',
+            'I can make a difference every day',
+            'My choices matter and help animals',
+            'I am a friend to animals everywhere',
+            'I am learning to be more caring every day',
+            'It\'s okay to have big feelings',
+            'I am doing my best, and that\'s enough',
+            'I treat others the way I want to be treated',
+            'I am proud of caring about animals',
+            'My heart is full of love and kindness',
+            'I am making the world a gentler place',
+            'Every act of kindness counts',
+            'I am strong, smart, and compassionate'
+        ];
+
+        function newAffirmation() {
+            const affBox = document.getElementById('affirmation');
+            const random = Math.floor(Math.random() * affirmations.length);
+            affBox.style.opacity = '0';
+            setTimeout(() => {
+                affBox.textContent = affirmations[random];
+                affBox.style.opacity = '1';
+            }, 300);
+        }
+
+        // Happy Facts
+        const happyFacts = [
+            'Otters hold hands when they sleep so they don\'t drift apart! 🦦',
+            'Cows produce the most milk when they listen to calm music! 🎵',
+            'Goats have accents! They sound different based on where they live! 🐐',
+            'Pigs can learn to play video games with joysticks! 🎮',
+            'Chickens can remember over 100 different faces! 🐔',
+            'Baby elephants suck their trunks like human babies suck their thumbs! 🐘',
+            'Sheep can recognize and remember 50 different sheep faces for years! 🐑',
+            'Rabbits jump and twist in the air when they\'re happy - it\'s called a binky! 🐰',
+            'Cows have best friends and get stressed when separated from them! 💕',
+            'Ducks surf on ocean waves just for fun! 🦆',
+            'Pigs wag their tails when they\'re happy, just like dogs! 🐷',
+            'Chickens dream while they sleep! 🌙',
+            'Horses can remember friends they haven\'t seen in years! 🐴',
+            'Turkeys can blush when they\'re excited or happy! 🦃',
+            'Mother hens teach their chicks which foods are yummy! 🐣'
+        ];
+
+        function newHappyFact() {
+            const factBox = document.getElementById('happyFact');
+            const random = Math.floor(Math.random() * happyFacts.length);
+            factBox.style.opacity = '0';
+            setTimeout(() => {
+                factBox.textContent = happyFacts[random];
+                factBox.style.opacity = '1';
+            }, 300);
+        }
+
+        // Mood Check
+        function checkMood(mood) {
+            const response = document.getElementById('moodResponse');
+            const title = document.getElementById('moodTitle');
+            const message = document.getElementById('moodMessage');
+            const calmButton = document.getElementById('calmButton');
+
+            const moodResponses = {
+                happy: {
+                    title: '😊 That\'s Wonderful!',
+                    message: 'We\'re so glad you\'re feeling happy! Your positive energy helps make the world a brighter place. Keep exploring, learning, and sharing your joy with others. Happy people help create happy animals!',
+                    showCalm: false
+                },
+                excited: {
+                    title: '🤗 How Exciting!',
+                    message: 'Your excitement shows how much you care about learning and making a difference! Channel that amazing energy into making kind choices, sharing what you know with others, and celebrating all the good things happening in the world!',
+                    showCalm: false
+                },
+                curious: {
+                    title: '🤔 Curiosity is Great!',
+                    message: 'Being curious means you have an open mind and want to understand the world better. That\'s absolutely awesome! Keep asking questions, discovering new things, and letting your curiosity lead you to wonderful places. The world needs curious minds like yours!',
+                    showCalm: false
+                },
+                sad: {
+                    title: '😢 It\'s Okay to Feel Sad',
+                    message: 'Learning about animals can bring up sad feelings, and that\'s completely normal and okay. It shows you have a caring, empathetic heart. Remember that many people are working to help animals, and YOU are part of making things better. Would you like to visit the Calm Corner for some comfort and peaceful activities?',
+                    showCalm: true
+                },
+                worried: {
+                    title: '😟 We Understand Your Worry',
+                    message: 'Feeling worried shows you care deeply about animals and the world. That\'s a sign of a compassionate person! Remember, there are thousands of people working every day to help animals, and positive changes ARE happening. YOU can make a difference too, one kind choice at a time. Let\'s help you feel calmer and more hopeful.',
+                    showCalm: true
+                },
+                calm: {
+                    title: '😌 That\'s Peaceful and Wonderful',
+                    message: 'Feeling calm is a beautiful thing! It means you\'re taking care of your emotions while learning important things. That\'s very mature and wise of you. Keep that peaceful feeling with you, and know that calm, thoughtful people help create positive change in the world.',
+                    showCalm: false
+                }
+            };
+
+            const moodData = moodResponses[mood];
+            title.textContent = moodData.title;
+            message.textContent = moodData.message;
+            calmButton.style.display = moodData.showCalm ? 'inline-block' : 'none';
+            response.classList.add('show');
+        }
+
+        // Contact Form
+        function submitForm(event) {
+            event.preventDefault();
+            document.getElementById('contactForm').style.display = 'none';
+            document.getElementById('formSuccess').style.display = 'block';
+        }
+
+        // Smooth transitions
+        document.querySelectorAll('.affirmation-box').forEach(box => {
+            box.style.transition = 'opacity 0.3s';
+        });
+        document.getElementById('dailyTip').style.transition = 'opacity 0.3s';
+        document.getElementById('carouselFact').style.transition = 'opacity 0.3s';
+    </script>
+</body>
+</html>; color: #7b1fa2; font-weight: 600;">A safe space for curious minds aged 5-12</p>
+
+                <div class="hub-buttons">
+                    <a href="#facts" onclick="showSection('facts'); trackProgress('facts')" class="hub-button">
+                        <span>📚</span>
+                        <p>Learn Facts</p>
+                    </a>
+                    <a href="#stories" onclick="showSection('stories'); trackProgress('stories')" class="hub-button" style="background: linear-gradient(135deg, #ff6b9d 0%, #f06292 100%);">
+                        <span>📖</span>
+                        <p>Read Stories</p>
+                    </a>
+                    <a href="#wellbeing" onclick="showSection('wellbeing'); trackProgress('wellbeing')" class="hub-button" style="background: linear-gradient(135deg, #81c784 0%, #66bb6a 100%);">
+                        <span>💚</span>
+                        <p>Calm Corner</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Animal of the Day -->
+            <div class="animal-of-day">
+                <h3>🌟 Animal Friend of the Day 🌟</h3>
+                <div class="big-emoji" id="animalOfDay">🐷</div>
+                <p style="font-size: 1.3rem; color: #e65100; font-weight: 600;" id="animalName">Penny the Pig!</p>
+                <p style="font-size: 1.1rem; color: #5d4037;">Click on "Read Stories" to learn all about me!</p>
+            </div>
+
+            <!-- Daily Tip -->
+            <div class="daily-tip">
+                <h3>💡 Kindness Tip of the Day</h3>
+                <p id="dailyTip">Every small choice you make can help animals! Try eating one extra vegetable today. 🥕</p>
+                <button onclick="newDailyTip()" class="btn" style="margin-top: 1rem; background: white; color: #5e35b1;">Get New Tip!</button>
+            </div>
+        </section>
+
+        <!-- Facts Section -->
+        <section id="facts" class="section">
+            <div class="card">
+                <h2>📚 Amazing Animal Facts</h2>
+                <p>Did you know that farm animals are smart, caring, and have their own personalities? Let's learn about them together!</p>
+
+                <!-- Fun Fact Carousel -->
+                <div class="fun-fact-carousel">
+                    <p id="carouselFact">🌟 Quick Fact: Pigs are smarter than dogs and can solve puzzles!</p>
+                    <button onclick="rotateFact()" class="btn" style="background: white; color: #2196f3;">Next Fact →</button>
+                </div>
+
+                <!-- Animal Selector -->
+                <h3 style="color: #ff6f00; margin-top: 2rem;">Choose an animal to learn about:</h3>
+                <div class="animal-selector">
+                    <div class="animal-option selected" onclick="showAnimalInfo('pig')">
+                        <div class="emoji">🐷</div>
+                        <p style="font-weight: 700; font-size: 1.2rem;">Pigs</p>
+                    </div>
+                    <div class="animal-option" onclick="showAnimalInfo('cow')">
+                        <div class="emoji">🐄</div>
+                        <p style="font-weight: 700; font-size: 1.2rem;">Cows</p>
+                    </div>
+                    <div class="animal-option" onclick="showAnimalInfo('chicken')">
+                        <div class="emoji">🐔</div>
+                        <p style="font-weight: 700; font-size: 1.2rem;">Chickens</p>
+                    </div>
+                    <div class="animal-option" onclick="showAnimalInfo('sheep')">
+                        <div class="emoji">🐑</div>
+                        <p style="font-weight: 700; font-size: 1.2rem;">Sheep</p>
+                    </div>
+                </div>
+
+                <!-- Animal Info Sections -->
+                <div id="pigInfo" class="animal-info">
+                    <div class="fact-box">
+                        <h3>🐷 Pigs are Super Smart!</h3>
+                        <p>Pigs are one of the smartest animals in the world - even smarter than many dogs! They can learn tricks, play video games (yes, really!), recognize their own names, and even understand complex emotions.</p>
+                        <p>Pigs love to roll in mud to keep cool and protect their skin from the sun. They're actually very clean animals and will never mess in the place where they sleep if given enough space!</p>
+                    </div>
+
+                    <div class="did-you-know">
+                        Pigs can dream while they sleep, just like you! They also have excellent memories and can remember things for years.
+                    </div>
+                </div>
+
+                <div id="cowInfo" class="animal-info" style="display: none;">
+                    <div class="fact-box">
+                        <h3>🐄 Cows Have Best Friends</h3>
+                        <p>Cows are incredibly social animals who form deep friendships! They choose best friends and become stressed when separated. Mother cows have strong bonds with their babies and will call to them when they're apart.</p>
+                        <p>Cows are gentle, curious animals who love to explore. They can recognize over 100 other cows and remember faces for a long time - even human faces!</p>
+                    </div>
+
+                    <div class="did-you-know">
+                        Cows produce more milk when they listen to slow, calming music! Some farmers even play classical music for their cows. 🎵
+                    </div>
+                </div>
+
+                <div id="chickenInfo" class="animal-info" style="display: none;">
+                    <div class="fact-box">
+                        <h3>🐔 Chickens Talk to Their Babies</h3>
+                        <p>Mother hens start talking to their chicks before they even hatch! The babies can hear their mom through the eggshell and will chirp back. Chickens have over 30 different vocalizations to communicate different things.</p>
+                        <p>Chickens are smarter than people think - they can do math, recognize over 100 different chickens, and even plan for the future!</p>
+                    </div>
+
+                    <div class="did-you-know">
+                        Chickens experience REM sleep, which means they dream just like we do! They also love to play and have fun races with each other.
+                    </div>
+                </div>
+
+                <div id="sheepInfo" class="animal-info" style="display: none;">
+                    <div class="fact-box">
+                        <h3>🐑 Sheep Have Amazing Memories</h3>
+                        <p>Sheep can remember and recognize up to 50 different sheep and 10 human faces for years! They're much smarter than people give them credit for. Sheep also have best friends and get stressed when separated from them.</p>
+                        <p>Sheep show emotions through their facial expressions. Scientists have learned that sheep can feel happy, sad, scared, and even bored!</p>
+                    </div>
+
+                    <div class="did-you-know">
+                        Sheep can self-medicate! When they feel sick, they'll seek out specific plants that can help them feel better. 🌿
+                    </div>
+                </div>
+
+                <h3 style="color: #ff6f00;">🌾 Understanding Factory Farms</h3>
+                <p>Sometimes, many animals are kept in small spaces to produce food quickly and cheaply. This can make animals uncomfortable and sad because they don't have room to move around, play, or express their natural behaviors.</p>
+
+                <div class="did-you-know">
+                    Good news! More and more farms are choosing to give animals better lives. Some farms let animals roam outside, play in the grass, and live in comfortable homes. These are called "free-range" or "pasture-raised" farms, and they're becoming more popular!
+                </div>
+
+                <h3 style="color: #66bb6a;">🌱 How Can We Help?</h3>
+                <p>There are many ways you can show kindness to animals:</p>
+                <ul style="margin-left: 2rem; margin-top: 1rem; font-size: 1.1rem;">
+                    <li style="margin: 0.8rem 0;">🥕 <strong>Eat more plants!</strong> Fruits, vegetables, beans, and grains are delicious and help animals</li>
+                    <li style="margin: 0.8rem 0;">💚 <strong>Choose kindly-raised products</strong> when you can (look for free-range or pasture-raised labels)</li>
+                    <li style="margin: 0.8rem 0;">📢 <strong>Share what you learn</strong> with friends and family in a kind way</li>
+                    <li style="margin: 0.8rem 0;">🎨 <strong>Create and celebrate!</strong> Draw pictures, write poems, or make crafts about animals you love</li>
+                    <li style="margin: 0.8rem 0;">❤️ <strong>Practice compassion</strong> in all areas of your life - to animals AND people!</li>
+                </ul>
+
+                <div class="back-home">
+                    <button onclick="showSection('home')" class="btn">🏠 Back to Home</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stories Section -->
+        <section id="stories" class="section">
+            <div class="card">
+                <h2>📖 Animal Stories - In Their Own Words</h2>
+                <p style="font-size: 1.2rem;">These animals want to share their stories with you! Click on each one to hear what they have to say.</p>
+
+                <div class="story-grid">
+                    <div class="story-card" onclick="toggleStory('story1')">
+                        <div class="emoji">🐷</div>
+                        <h3>Penny the Pig's Day</h3>
+                        <p style="color: #7b1fa2; font-weight: 600;">Click to read my story!</p>
+                        <div id="story1" class="story-content">
+                            <p style="font-size: 1.2rem;"><strong>🌞 Hi there! I'm Penny!</strong></p>
+                            <p>Let me tell you about my perfect day! I wake up when the sun peeks through my cozy barn. The first thing I do? Roll in my favorite mud puddle! It's not just fun - mud is like sunscreen for pigs. It keeps me cool and protects my sensitive skin.</p>
+                            <p>Then I meet up with my best friends, Pebbles and Petunia. We love solving puzzles together! Our farmer gives us treat-dispensing toys, and we figure out how to get the yummy snacks inside. I'm really good at it!</p>
+                            <p>In the afternoon, I love getting belly rubs. Did you know I can recognize everyone by their voice? When my farmer calls my name, I come running! I even learned to sit on command - just like a dog!</p>
+                            <p><strong>💭 What I want you to know:</strong> Just like you, I have feelings. I get excited when I see my friends. I feel safest in my cozy bed at night. I love learning new things. Every pig deserves to be happy, play, and be loved!</p>
+                        </div>
+                    </div>
+
+                    <div class="story-card" onclick="toggleStory('story2')">
+                        <div class="emoji">🐄</div>
+                        <h3>Clara the Cow's Friendship</h3>
+                        <p style="color: #7b1fa2; font-weight: 600;">Click to read my story!</p>
+                        <div id="story2" class="story-content">
+                            <p style="font-size: 1.2rem;"><strong>🌼 Hello friend! I'm Clara!</strong></p>
+                            <p>I want to tell you about my best friend, Bella. We do everything together! We graze in the same spots, nap under the same tree, and even moo in harmony (it's a cow thing!).</p>
+                            <p>When Bella had to go to the vet once, I was so worried! I kept calling for her and wouldn't eat much. When she came back, I was SO happy! We touched noses and I could finally relax. That's how much cows care about our friends.</p>
+                            <p>We spend our days walking in the green fields, munching on fresh grass, and watching clouds. Sometimes we play tag (yes, cows play!). We also love our farmer because she's always gentle and talks to us in a soft voice.</p>
+                            <p><strong>💭 What I want you to know:</strong> Cows feel love and friendship deeply. When I had my calf, I sang to her every day. We remember kindness forever. All cows deserve space to roam, friends to love, and farmers who care!</p>
+                        </div>
+                    </div>
+
+                    <div class="story-card" onclick="toggleStory('story3')">
+                        <div class="emoji">🐔</div>
+                        <h3>Henry the Hen's Family</h3>
+                        <p style="color: #7b1fa2; font-weight: 600;">Click to read my story!</p>
+                        <div id="story3" class="story-content">
+                            <p style="font-size: 1.2rem;"><strong>🥚 Cluck cluck! I'm Henry!</strong></p>
+                            <p>The best day of my life was when my chicks hatched! I had been sitting on my eggs for weeks, singing to them every day. I could hear tiny chirps from inside the shells, and my babies chirped back to me!</p>
+                            <p>When they finally peeked out, fluffy and yellow, my heart was so full! I taught them everything - how to scratch for bugs, where the best dust baths are, and which sounds mean "danger" versus "yummy food found!"</p>
+                            <p>I love starting my day by scratching in the dirt hunting for tasty bugs. Then I take a dust bath to clean my feathers. In the evening, I roost with my family and friends, and we all nestle together.</p>
+                            <p><strong>💭 What I want you to know:</strong> Chickens are smart! I can recognize over 100 other chickens and understand cause and effect. I love my family and feel proud of being a mom. All chickens deserve to spread their wings, feel sunshine, and care for their babies!</p>
+                        </div>
+                    </div>
+
+                    <div class="story-card" onclick="toggleStory('story4')">
+                        <div class="emoji">🐑</div>
+                        <h3>Stella the Sheep's Adventure</h3>
+                        <p style="color: #7b1fa2; font-weight: 600;">Click to read my story!</p>
+                        <div id="story4" class="story-content">
+                            <p style="font-size: 1.2rem;"><strong>☁️ Baa! I'm Stella!</strong></p>
+                            <p>I have the best memory in my flock! I can remember my shepherd's face and every sheep I've ever met. My best friend, Snowflake, and I have been together since we were lambs. We always stay close and share the best grazing spots.</p>
+                            <p>One day, I wasn't feeling well, so I went looking for some herbs I knew would help me. My shepherd was amazed! Sheep can self-medicate - we know which plants make us feel better.</p>
+                            <p>My favorite thing is spring when we get to run through the green hills. The whole flock plays together, and the lambs do the funniest jumps! We call it "pronking" - it's when we leap straight up in the air because we're so happy!</p>
+                            <p><strong>💭 What I want you to know:</strong> Sheep aren't silly or mindless - we're intelligent, emotional, and we care about our friends. We can recognize our shepherd from far away and we feel safe with people who are kind to us. Every sheep deserves green pastures and a peaceful flock!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="back-home">
+                    <button onclick="showSection('home')" class="btn">🏠 Back to Home</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="section">
+            <div class="card">
+                <h2>🎯 Test Your Animal Knowledge!</h2>
+                <p style="font-size: 1.2rem;">Let's see what you remember! Don't worry - this is just for fun and learning!</p>
+
+                <div class="quiz-score">
+                    Score: <span id="quizScore">0</span> / 5 correct! 🌟
+                </div>
+
+                <div class="quiz-container">
+                    <div class="question">
+                        <h3>Question 1: What do pigs use mud for?</h3>
+                        <div class="options">
+                            <div class="option" onclick="checkAnswer(this, false, 1)">A) To get dirty because they like being messy</div>
+                            <div class="option" onclick="checkAnswer(this, true, 1)">B) To stay cool and protect their skin from the sun</div>
+                            <div class="option" onclick="checkAnswer(this, false, 1)">C) Because they don't like water</div>
+                        </div>
+                        <div id="feedback1" class="feedback">
+                            <p class="response"></p>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>Question 2: What is true about cows?</h3>
+                        <div class="options">
+                            <div class="option" onclick="checkAnswer(this, false, 2)">A) They like to be alone all the time</div>
+                            <div class="option" onclick="checkAnswer(this, true, 2)">B) They have best friends and get sad when separated</div>
+                            <div class="option" onclick="checkAnswer(this, false, 2)">C) They can't remember people's faces</div>
+                        </div>
+                        <div id="feedback2" class="feedback">
+                            <p class="response"></p>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>Question 3: How many different sounds can chickens make?</h3>
+                        <div class="options">
+                            <div class="option" onclick="checkAnswer(this, false, 3)">A) Only 5 sounds</div>
+                            <div class="option" onclick="checkAnswer(this, false, 3)">B) Just one sound - cluck!</div>
+                            <div class="option" onclick="checkAnswer(this, true, 3)">C) Over 30 different sounds</div>
+                        </div>
+                        <div id="feedback3" class="feedback">
+                            <p class="response"></p>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>Question 4: What special ability do sheep have?</h3>
+                        <div class="options">
+                            <div class="option" onclick="checkAnswer(this, false, 4)">A) They can fly short distances</div>
+                            <div class="option" onclick="checkAnswer(this, true, 4)">B) They can remember up to 50 sheep and 10 human faces</div>
+                            <div class="option" onclick="checkAnswer(this, false, 4)">C) They can change the color of their wool</div>
+                        </div>
+                        <div id="feedback4" class="feedback">
+                            <p class="response"></p>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>Question 5: Which is a kind way to help farm animals?</h3>
+                        <div class="options">
+                            <div class="option" onclick="checkAnswer(this, false, 5)">A) Ignore how animals are treated</div>
+                            <div class="option" onclick="checkAnswer(this, true, 5)">B) Eat more fruits, vegetables, and plant-based foods</div>
+                            <div class="option" onclick="checkAnswer(this, false, 5)">C) Keep what you learned a secret</div>
+                        </div>
+                        <div id="feedback5" class="feedback">
+                            <p class="response"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="back-home">
+                    <button onclick="showSection('home')" class="btn">🏠 Back to Home</button>
+                    <button onclick="resetQuiz()" class="btn btn-secondary" style="margin-left: 1rem;">🔄 Try Again</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wellbeing Section -->
+        <section id="wellbeing" class="section">
+            <div class="card">
+                <h2>💚 The Calm Corner</h2>
+                <p style="font-size: 1.2rem;">Learning about animals can sometimes bring up big feelings. This is your safe space to feel calm and happy again!</p>
+
+                <div class="wellbeing-tools">
+                    <div class="tool-card">
+                        <h3>🫁 Breathing Exercise</h3>
+                        <p>Take a moment to breathe deeply and feel calm</p>
+                        <div class="breathing-circle" onclick="startBreathing(this)">
+                            Click to Start
+                        </div>
+                        <p style="margin-top: 1rem; font-size: 1rem; color: #7b1fa2; font-weight: 600;">Breathe in as it grows, breathe out as it shrinks</p>
+                    </div>
+
+                    <div class="tool-card">
+                        <h3>✨ Daily Affirmation</h3>
+                        <p>Positive words to help you feel strong and kind</p>
+                        <div class="affirmation-box" id="affirmation">
+                            I am kind to all living things
+                        </div>
+                        <button onclick="newAffirmation()" class="btn btn-secondary">Get New Affirmation ✨</button>
+                    </div>
+
+                    <div class="tool-card">
+                        <h3>🌟 Happy Animal Facts</h3>
+                        <p>Joyful facts to make you smile!</p>
+                        <div class="affirmation-box" id="happyFact" style="background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%); border-color: #4fc3f7; color: #01579b;">
+                            Otters hold hands when they sleep so they don't drift apart! 🦦
+                        </div>
+                        <button onclick="newHappyFact()" class="btn btn-secondary">New Happy Fact 🎉</button>
+                    </div>
+                </div>
+
+                <div class="card" style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-color: #ffa726; margin-top: 2rem;">
+                    <h3 style="color: #e65100;">💖 Remember These Important Things:</h3>
+                    <p style="font-size: 1.2rem; margin: 1rem 0;">🌈 <strong>It's okay to feel sad or worried sometimes.</strong> Those feelings show you have a caring heart!</p>
+                    <p style="font-size: 1.2rem; margin: 1rem 0;">💪 <strong>You're learning important things</strong> that many adults don't know yet. That's amazing!</p>
+                    <p style="font-size: 1.2rem; margin: 1rem 0;">🌱 <strong>Small acts of kindness make a big difference.</strong> Every positive choice matters!</p>
+                    <p style="font-size: 1.2rem; margin: 1rem 0;">💖 <strong>Taking care of animals also means taking care of yourself.</strong> Be kind to YOU too!</p>
+                    <p style="font-size: 1.2rem; margin: 1rem 0;">🌟 <strong>You're never alone.</strong> Many people care about animals just like you do!</p>
+                </div>
+
+                <!-- Downloadable Calm Coloring Page Info -->
+                <div class="daily-tip" style="margin-top: 2rem;">
+                    <h3>🎨 Calm Activity Idea</h3>
+                    <p>Try drawing your favorite farm animal! Art is a great way to process your feelings and show love for animals. You could draw them in their perfect home - with lots of space, friends, and sunshine! 🌞</p>
+                </div>
+
+                <div class="back-home">
+                    <button onclick="showSection('home')" class="btn">🏠 Back to Home</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mood Check Section -->
+        <section id="mood" class="section">
+            <div class="card">
+                <h2>😊 How Are You Feeling Today?</h2>
+                <p style="font-size: 1.2rem;">Click on the emoji that shows how you feel right now. Remember - ALL feelings are okay!</p>
+
+                <div class="mood-emojis">
+                    <div class="mood-emoji" onclick="checkMood('happy')" title="Happy">😊</div>
+                    <div class="mood-emoji" onclick="checkMood('excited')" title="Excited">🤗</div>
+                    <div class="mood-emoji" onclick="checkMood('curious')" title="Curious">🤔</div>
+                    <div class="mood-emoji" onclick="checkMood('sad')" title="Sad">😢</div>
+                    <div class="mood-emoji" onclick="checkMood('worried')" title="Worried">😟</div>
+                    <div class="mood-emoji" onclick="checkMood('calm')" title="Calm">😌</div>
+                </div>
+
+                <div id="moodResponse" class="mood-response">
+                    <h3 id="moodTitle"></h3>
+                    <p style="font-size: 1.2rem; line-height: 1.8;" id="moodMessage"></p>
+                    <button onclick="showSection('wellbeing')" class="btn" id="calmButton" style="display: none; margin-top: 1.5rem;">Visit Calm Corner 💚</button>
+                </div>
+
+                <div class="back-home">
+                    <button onclick="showSection('home')" class="btn">🏠 Back to Home</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="card">
+                <h2>ℹ️ About Trigger-Free Facts</h2>
+                
+                <div class="fact-box" style="background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);">
+                    <h3>💜 Why Did We Create This Website?</h3>
+                    <p>We believe that learning about animals and where our food comes from is important - but it should never be scary, overwhelming, or traumatic. Many websites and videos show upsetting content that can hurt young learners emotionally.</p>
+                    <p>That's why we created a different kind of space. <strong>Trigger-Free Facts</strong> was made to teach with kindness, honesty, and compassion. We want you to learn the truth about farm animals in a way that feels safe, gentle, and empowering.</p>
+                </div>
+
+                <div class="fact-box" style="background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%);">
+                    <h3>🌟 What Makes Us Different?</h3>
+                    <p>✨ <strong>No Shocking or Scary Content:</strong> We use gentle words, kind illustrations, and positive framing instead of upsetting images or harsh language.</p>
+                    <p>💚 <strong>Emotional Support Built-In:</strong> We include tools like breathing exercises, affirmations, and mood check-ins to help you process what you learn.</p>
+                    <p>📚 <strong>Age-Appropriate Education:</strong> Everything here is designed specifically for kids aged 5-12, with careful, caring language and concepts.</p>
+                    <p>🎯 <strong>Action-Focused:</strong> We don't just talk about problems - we focus on what YOU can do to make a positive difference!</p>
+                    <p>🏆 <strong>Interactive Learning:</strong> Quizzes, stories, and activities make learning fun and memorable.</p>
+                </div>
+
+                <div class="did-you-know">
+                    <p style="margin-bottom: 0;">This website was created by a student who cares deeply about animals AND about making sure young people have access to honest, kind, trauma-free education. We believe kids like you are compassionate, intelligent, and capable of changing the world! 🌍</p>
+                </div>
+
+                <h3 style="color: #ff6f00;">📜 Our Promise to You</h3>
+                <p style="font-size: 1.15rem;">We promise to always be <strong>honest, but never scary.</strong> We'll teach you important facts, but always with deep care for your feelings and emotional safety. We'll remind you that learning about tough topics shows you have a big, brave, caring heart. And we'll always celebrate the positive changes happening in the world! 💖</p>
+
+                <h3 style="color: #66bb6a;">🌈 Who Is This Website For?</h3>
+                <p style="font-size: 1.15rem;">This site is perfect for curious kids aged 5-12 who want to learn about animals. It's also a great resource for parents and teachers looking for age-appropriate, trauma-sensitive animal welfare education. If you care about animals and want to learn in a safe space, you're in the right place! 🏠</p>
+
+                <div class="back-home">
+                    <button onclick="showSection('home')" class="btn">🏠 Back to Home</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="card">
+                <h2>✉️ Get In Touch!</h2>
+                <p style="font-size: 1.2rem
